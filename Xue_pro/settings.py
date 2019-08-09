@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'future',
     'httplib2',
     'six',
+    'captcha',
 
 ]
 

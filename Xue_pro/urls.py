@@ -25,5 +25,8 @@ urlpatterns = [
     # url(r'^users/$', include('users.urls', namespace='users')),
     url(r'^login/$', v1.UserLogin, name='login'),
     url(r'^register/$', v1.RegisterView.as_view(), name='register'),
+    #验证图
+    url(r'^captcha/', include('captcha.urls')),
+
 
 ]
