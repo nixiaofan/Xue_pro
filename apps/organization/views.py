@@ -44,6 +44,16 @@ class OrgList(View):
 
         return render(request, 'org-list.html', context)
 
+class TeacherView(View):
+    '''显示教师列表'''
+    def get(self, request):
+        all_teach = Teacher.objects.all()
+
+
+        context = {'all_teach':all_teach}
+        return render(request, 'teachers-list.html', context)
+
+
 
 
 

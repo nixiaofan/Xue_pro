@@ -19,6 +19,8 @@ class Course(models.Model):
     class Meta:
         verbose_name = '课程'
         verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.name
 
 
 class Lesson(models.Model):
@@ -30,6 +32,8 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = '章节'
         verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.name
 
 
 class Video(models.Model):
@@ -41,6 +45,8 @@ class Video(models.Model):
     class Meta:
         verbose_name = '视频'
         verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.name
 
 
 class CourseResource(models.Model):
@@ -53,4 +59,7 @@ class CourseResource(models.Model):
     class Meta:
         verbose_name = '资料'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
 
