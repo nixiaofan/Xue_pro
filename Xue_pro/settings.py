@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'httplib2',
     'six',
     'captcha',
+    'pure_pagination',
 
 ]
 
@@ -81,6 +82,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #将media 的url注册到html中
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -146,3 +149,15 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+#配置上传文件的路径，不可以是tuple
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+#分页功能
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 5,
+    'MARGIN_PAGES_DISPLAYED': 2,
+
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+}

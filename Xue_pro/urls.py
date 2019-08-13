@@ -17,6 +17,9 @@ from django.conf.urls import url, include
 from django.contrib import admin
 import xadmin
 from django.views.generic import TemplateView
+from django.views.static import serve
+
+from Xue_pro.settings import MEDIA_ROOT
 from users import views as v1
 
 urlpatterns = [
@@ -27,6 +30,11 @@ urlpatterns = [
     url(r'^register/$', v1.RegisterView.as_view(), name='register'),
     #验证图
     url(r'^captcha/', include('captcha.urls')),
+    #------------以上是users的url--------------------
+    url(r'^org/', include('organization.urls', namespace='org')),
+    # 配置静态文件的处理
+    url(r'^media/(?P<path>.*)/$', serve, {'document_root': MEDIA_ROOT}),
+
 
 
 ]

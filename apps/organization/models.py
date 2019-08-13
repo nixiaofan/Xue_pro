@@ -26,6 +26,7 @@ class CourseOrg(models.Model):
     image = models.ImageField(upload_to='org/%Y/%m', verbose_name='封面', max_length=100)
     address = models.CharField(max_length=100, verbose_name='机构地址')
     city = models.ForeignKey(CityDict, verbose_name='所在城市')
+    category = models.CharField(max_length=20, choices=(('p', '培训机构'), ('g', '个人'), ('x', '高校')), default='p')
 
     class Meta:
         verbose_name = '机构'
