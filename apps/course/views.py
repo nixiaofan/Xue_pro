@@ -14,3 +14,12 @@ class CourseList(View):
         context = {'all_course': all_course}
 
         return render(request, 'course-list.html', context)
+
+class CourseDetail(View):
+    '''课程详情页面'''
+
+    def get(self, request, course_id):
+        course = Course.objects.get(id=course_id)
+
+        context = {'course': course}
+        return render(request, 'course-detail.html', context)
